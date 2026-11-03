@@ -24,13 +24,13 @@ Con curl:
 
 ```fish
 mkdir -p ~/.config/fish/functions
-curl -fsSL https://raw.githubusercontent.com/alexis123javier-glitch/nodormir/main/functions/nodormir.fish -o ~/.config/fish/functions/nodormir.fish
+curl -fsSL https://raw.githubusercontent.com/Jea1905/nodormir/main/functions/nodormir.fish -o ~/.config/fish/functions/nodormir.fish
 ```
 
 Con Fisher:
 
 ```fish
-fisher install alexis123javier-glitch/nodormir
+fisher install Jea1905/nodormir
 ```
 
 Abre una terminal nueva y ya puedes usar `nodormir`.
