@@ -45,7 +45,7 @@ function nodormir --description 'Ejecuta un comando sin que el portátil se susp
         echo "Suspensión bloqueada. Pulsa Ctrl+C para volver a permitirla."
         set argv sleep infinity
     end
-    systemd-inhibit --what=sleep:idle:handle-lid-switch --why="$argv" $argv
+    systemd-inhibit --what=sleep:idle:handle-lid-switch --why="$argv" -- $argv
 end
 funcsave nodormir
 ```
@@ -53,6 +53,7 @@ funcsave nodormir
 ## Cómo funciona
 
 - `systemd-inhibit`: avisa al sistema de que NO se suspenda mientras el comando esté funcionando.
+- `--`: separa las opciones de `systemd-inhibit` del comando, para que un comando que empiece por `-` no se confunda con una opción.
 - `--what=sleep:idle:handle-lid-switch`: bloquea la suspensión normal, la suspensión
   por inactividad y la suspensión al cerrar la tapa.
 - `$argv`: el comando que se escribe detrás de `nodormir`.
